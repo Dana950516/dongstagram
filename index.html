@@ -2665,12 +2665,18 @@
         padding: 0;
         border: 0;
         background: none;
+        color: #111 !important;
         cursor: pointer;
         appearance: none;
         -webkit-appearance: none;
         border-radius: 0;
         box-shadow: none;
         outline: 0 !important;
+      }
+
+      .profile-stat-button strong,
+      .profile-stat-button span {
+        color: #111 !important;
       }
 
       .profile-stat strong {
@@ -4190,6 +4196,7 @@
       const SUBDUBI_PHOTOS = ["숩1.jpg", "숩2 (1).jpg", "숩2 (2).jpg", "숩2 (3).jpg"];
       const WOONGDADDY_PHOTOS = ["코오롱.jpg", "코오롱2.jpg"];
       const DM_SENT_STORAGE_KEY = "dongstagram_dm_sent_messages_v1";
+      const FEED_IMAGE_FALLBACK = "민선프사.jpg";
       const INTERACTIVE_THREAD_IDS = [
         "dongmyungssi",
         "honggu",
@@ -4211,7 +4218,9 @@
         "kyyyong",
         "bouquet_yeom",
         "CAU_15",
-        "johny.bunny"
+        "johny.bunny",
+        "ohaasa",
+        "daeun_dongche"
       ];
       const guestQuizQuestions = [
         {
@@ -4387,10 +4396,10 @@
           caption: "#생일 #5월의여자들\n우리의 달인 5월! 늘 합동 생파하고, 함께 선물을 나누고, 사람들도 우리를 함께 축하해줘서 좋았어. 첫 사진은 성수에 있는 타코다이닝 맷돌에 갔던 날인데, 날씨가 너무 좋아서 즐거웠었다! 앞으로도 생일은 늘 같이 축하하자",
           avatar: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23ead8d2'/><stop offset='1' stop-color='%23bcc6dd'/></linearGradient></defs><rect width='100' height='100' fill='url(%23g)'/><circle cx='50' cy='39' r='20' fill='%23ffffff' fill-opacity='0.78'/><rect x='22' y='64' width='56' height='20' rx='10' fill='%23ffffff' fill-opacity='0.78'/></svg>",
           images: [
-            "IMAGE_생일/생일.jpg",
-            "IMAGE_생일/AED10AAD-445A-4174-BE10-E1DD2BA5B97C.jpg",
-            "IMAGE_생일/IMG_0267.jpg",
-            "IMAGE_생일/IMG_0955.jpg"
+            "image_생일/생일.jpg",
+            "image_생일/AED10AAD-445A-4174-BE10-E1DD2BA5B97C.jpg",
+            "image_생일/IMG_0267.jpg",
+            "image_생일/IMG_0955.jpg"
           ]
         },
         {
@@ -4484,8 +4493,8 @@
           username: "daeun_dongche",
           date: "Aug 20 2022",
           likes: "좋아요 81개",
-          captionHtml: '<span class="hashtag">#밀탑</span> <span class="hashtag">#우리가사랑한음식들</span><br>우리가 이렇게 가깝게 오래 잘 지낼 수 있었던 것은 음식을 사랑한다는 점도 비슷해서 인 것 같아. 나의 최애는 떡볶이, 너의 최애는 김밥과 닭발이지만, 둘 다 예민하지 않고, 먹는 기쁨이 크다보니 맛난 것들을 함께 많이 먹으러 다녔지. 기억나는 너와의 맛집리스트는 밀탑, 연주바(우리호캉스한날갔던 을지로 맛집), 삼전생고기, 개포동부산오뎅, 삼성동 스시욘즈. 또 무엇이 있었지? 기억 저편으로 사라지기 전에 여기에 댓글로 남겨주렴!',
-          caption: "#밀탑 #우리가사랑한음식들\n우리가 이렇게 가깝게 오래 잘 지낼 수 있었던 것은 음식을 사랑한다는 점도 비슷해서 인 것 같아. 나의 최애는 떡볶이, 너의 최애는 김밥과 닭발이지만, 둘 다 예민하지 않고, 먹는 기쁨이 크다보니 맛난 것들을 함께 많이 먹으러 다녔지. 기억나는 너와의 맛집리스트는 밀탑, 연주바(우리호캉스한날갔던 을지로 맛집), 삼전생고기, 개포동부산오뎅, 삼성동 스시욘즈. 또 무엇이 있었지? 기억 저편으로 사라지기 전에 여기에 댓글로 남겨주렴!",
+          captionHtml: '<span class="hashtag">#밀탑</span> <span class="hashtag">#우리가사랑한음식들</span><br>우리가 이렇게 가깝게 오래 잘 지낼 수 있었던 것은 음식을 사랑한다는 점도 비슷해서 인 것 같아. 나의 최애는 떡볶이, 너의 최애는 김밥과 닭발이지만, 둘 다 예민하지 않고, 먹는 기쁨이 크다보니 맛난 것들을 함께 많이 먹으러 다녔지. 기억나는 너와의 맛집리스트는 밀탑, 개포동부산오뎅, 삼성동 스시욘즈. 또 무엇이 있었지? 기억 저편으로 사라지기 전에 여기에 댓글로 남겨주렴!',
+          caption: "#밀탑 #우리가사랑한음식들\n우리가 이렇게 가깝게 오래 잘 지낼 수 있었던 것은 음식을 사랑한다는 점도 비슷해서 인 것 같아. 나의 최애는 떡볶이, 너의 최애는 김밥과 닭발이지만, 둘 다 예민하지 않고, 먹는 기쁨이 크다보니 맛난 것들을 함께 많이 먹으러 다녔지. 기억나는 너와의 맛집리스트는 밀탑, 개포동부산오뎅, 삼성동 스시욘즈. 또 무엇이 있었지? 기억 저편으로 사라지기 전에 여기에 댓글로 남겨주렴!",
           avatar: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23ead8cf'/><stop offset='1' stop-color='%23bcc9dc'/></linearGradient></defs><rect width='100' height='100' fill='url(%23g)'/><circle cx='50' cy='39' r='20' fill='%23ffffff' fill-opacity='0.78'/><rect x='22' y='64' width='56' height='20' rx='10' fill='%23ffffff' fill-opacity='0.78'/></svg>",
           images: ["밀탑.jpg"]
         },
@@ -4655,8 +4664,8 @@
           username: "daeun_dongche",
           date: "APR 14 2018",
           likes: "좋아요 73개",
-          captionHtml: '<span class="hashtag">#헤어쌤을빌려준날</span><br>아낌없이 나에게 모든 걸 공유해주고, 나눠주는 민순은 이날 결국 나에게 헤어쌤까지도 빌려주었지. 민선이 다니던 잠실새내의 미용실에서 드라이를 받았던 날. 너가 저 날 내가 굉장히 괜찮았다고 말해줘서인지 나도 저날 사진이 진짜진짜 좋아. 족발먹고 인생네컷까지 같이 찍었던 날',
-          caption: "#헤어쌤을빌려준날\n아낌없이 나에게 모든 걸 공유해주고, 나눠주는 민순은 이날 결국 나에게 헤어쌤까지도 빌려주었지. 민선이 다니던 잠실새내의 미용실에서 드라이를 받았던 날. 너가 저 날 내가 굉장히 괜찮았다고 말해줘서인지 나도 저날 사진이 진짜진짜 좋아. 족발먹고 인생네컷까지 같이 찍었던 날",
+          captionHtml: '<span class="hashtag">#헤어쌤을빌려준날</span><br>아낌없이 나에게 모든 걸 공유해주고, 나눠주는 민순은 이날 결국 나에게 헤어쌤까지도 빌려주었지. 민선이 다니던 잠실새내의 미용실에서 드라이를 받았던 날. 너가 저 날 내가 굉장히 괜찮았다고 말해줘서인지 나도 저날 사진이 진짜진짜 좋아. 족발먹고 인생네컷까지 같이 찍었던 날. 새악ㄱ해보니 너가 나에게 나눠준게 참 많아. 일단 오르멜라 예진쌤도, 맛집들도. 순의 큐레이션은 늘 나의 취향 100% 저격',
+          caption: "#헤어쌤을빌려준날\n아낌없이 나에게 모든 걸 공유해주고, 나눠주는 민순은 이날 결국 나에게 헤어쌤까지도 빌려주었지. 민선이 다니던 잠실새내의 미용실에서 드라이를 받았던 날. 너가 저 날 내가 굉장히 괜찮았다고 말해줘서인지 나도 저날 사진이 진짜진짜 좋아. 족발먹고 인생네컷까지 같이 찍었던 날. 새악ㄱ해보니 너가 나에게 나눠준게 참 많아. 일단 오르멜라 예진쌤도, 맛집들도. 순의 큐레이션은 늘 나의 취향 100% 저격",
           avatar: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23ead7cf'/><stop offset='1' stop-color='%23bcc8dc'/></linearGradient></defs><rect width='100' height='100' fill='url(%23g)'/><circle cx='50' cy='39' r='20' fill='%23ffffff' fill-opacity='0.78'/><rect x='22' y='64' width='56' height='20' rx='10' fill='%23ffffff' fill-opacity='0.78'/></svg>",
           images: ["드라이쌤/드라이쌤.JPG", "드라이쌤/IMG_3736.JPG", "드라이쌤/IMG_3750.JPG"]
         },
@@ -4711,9 +4720,9 @@
           username: "daeun_dongche",
           date: "Apr 10 2011",
           likes: "좋아요 48개",
-          caption: "우리의 GG시절. 고등학교 시절 3년을 통 틀어 가장 잘한 일 민선이랑 베프가 된 일! 시험 끝나면 함께 가던 삼전 생고기, 함께 본 한영외고 벚꽃, 층을 넘나들며 나눈 쉬는시간 잡담들까지. 모든 나날이 좋았다!!",
+          caption: "우리의 GG시절. 고등학교 시절 3년을 통 틀어 가장 잘한 일 민선이랑 베프가 된 일! 시험 끝나면 함께 가던 삼전 생고기, 함께 본 한영외고 벚꽃, 층을 넘나들며 나눈 쉬는시간 잡담들, 우리가 칭찬하고 욕했던 모든 모든 인연들까지. 모든 것이 네 덕에 충만했던 시간들이었다!!",
           avatar: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23e8d4ca'/><stop offset='1' stop-color='%23b7c6d8'/></linearGradient></defs><rect width='100' height='100' fill='url(%23g)'/><circle cx='50' cy='39' r='20' fill='%23ffffff' fill-opacity='0.78'/><rect x='22' y='64' width='56' height='20' rx='10' fill='%23ffffff' fill-opacity='0.78'/></svg>",
-          images: ["image_고등학교/고딩 5.jpg","image_고등학교/고딩 1.jpg","image_고등학교/고딩 2.jpg","image_고등학교/고딩 3.jpg","image_고등학교/고딩 4.jpg"]
+          images: ["image_고등학교/고딩 5.JPG","image_고등학교/고딩 1.JPG","image_고등학교/고딩 2.JPG","image_고등학교/고딩 3.JPG","image_고등학교/고딩 4.JPG"]
         },
         {
           username: "daeun_dongche",
@@ -4944,6 +4953,32 @@
           preview: "언니 결혼 너무 축하해요! 성인이 되고나서야 가까워졌는데...",
           time: "2w",
           messages: []
+        },
+        {
+          id: "ohaasa",
+          username: "ohaasa",
+          avatar: "오하아사 프사.jpg",
+          preview: "⭐2026년 4월 26일 순위⭐",
+          time: "now",
+          messages: [
+            {
+              direction: "left",
+              text: "⭐2026년 4월 26일 순위⭐\n1위 황소자리\n\n행운의 색상: 흰색\n행운의 장소: 용산\n행운의 숫자: 426"
+            }
+          ]
+        },
+        {
+          id: "daeun_dongche",
+          username: "daeun_dongche",
+          avatar: DAEUN_AVATAR,
+          preview: "사랑하는 민선아, 결혼을 정말 축하해.",
+          time: "now",
+          messages: [
+            {
+              direction: "left",
+              text: "사랑하는 민선아, 결혼을 정말 축하해.\n\n최근에 등산을 정말 좋아하는 한 어른에게 이런 이야기를 들었어. \"산을 가지 않은 사람은 인생을 반만 산 것이다\". 산이라는 환경에서의 경험이 그만큼 값지다는 말이겠지.\n\n이걸 준비하면서 너와의 시간들을 돌아보니 너가 없었다면 지난 내 17년은 반만 산 것이었을거야. 너와 함께라서 두 배로 재밌고, 두 배로 의미있고, 두 배로 따듯했어.\n\n책상 서랍에 과자 숨겨놓고 하나씩 꺼내 먹는 것처럼, 좋았던 순간들을 자주 꺼내먹으며 즐겁게 살자.\n\n아! 물론 새로운 좋은순간을 함께 만드는 일도 게을리하지말자!"
+            }
+          ]
         }
       ];
 
@@ -4974,6 +5009,7 @@
       const dmThreadAvatar = document.getElementById("dmThreadAvatar");
       const dmThreadTitle = document.getElementById("dmThreadTitle");
       const dmThreadBody = document.getElementById("dmThreadBody");
+      let activeCarouselSwipe = null;
       const dongmyungssiThreadScreen = document.getElementById("dongmyungssiThreadScreen");
       const dongmyungssiThreadBack = document.getElementById("dongmyungssiThreadBack");
       const dongmyungssiThreadAvatar = document.getElementById("dongmyungssiThreadAvatar");
@@ -5184,10 +5220,8 @@
           .map(
             (story, index) => `
               <button class="story" type="button" aria-label="${story.label}" ${story.storyImages ? `data-story-index="${index}"` : ""}>
-                <span class="story-ring">
-                  <span class="story-core">
-                    <img class="story-photo" src="${story.image}" alt="${story.label}" loading="lazy" />
-                  </span>
+                <span class="story-core story-core-plain">
+                  <img class="story-photo" src="${story.image}" alt="${story.label}" loading="lazy" />
                 </span>
                 <span class="story-name">${story.label}</span>
               </button>
@@ -5342,6 +5376,16 @@
             const previewHtml = post.captionPreviewHtml ?? captionHtml;
             const avatarImage = post.username === "daeun_dongche" ? DAEUN_AVATAR : post.avatar;
             const isLiked = Boolean(storedFeedLikes[post.id]);
+            const shouldDebugImage =
+              typeof post.caption === "string" &&
+              (post.caption.startsWith("우리의 GG시절.") || post.caption.startsWith("#생일 #5월의여자들"));
+
+            if (shouldDebugImage) {
+              console.log("[feed-image-debug]", {
+                caption: post.caption.split("\n")[0],
+                images
+              });
+            }
             return `
               <article class="post-card">
                 <div class="post-header">
@@ -5355,13 +5399,13 @@
                   </div>
                   <button class="icon-button icon-button-menu" type="button" aria-label="메뉴">${iconMarkup("menu")}</button>
                 </div>
-                <div class="post-media-shell">
+                <div class="post-media-shell" ${hasCarousel ? `data-post-key="${postKey}"` : ""}>
                   <div class="post-media-track" style="transform: translateX(-${currentIndex * 100}%);">
                     ${images
                       .map(
                         (image, imageIndex) => `
                           <div class="post-media-frame">
-                            <img class="post-media-image" src="${image}" alt="${hasCarousel ? `사진 ${imageIndex + 1}` : "게시물 이미지"}" loading="lazy" />
+                            <img class="post-media-image" src="${image}" alt="${hasCarousel ? `사진 ${imageIndex + 1}` : "게시물 이미지"}" loading="lazy" onerror="this.onerror=null;this.src='${FEED_IMAGE_FALLBACK}';" />
                           </div>
                         `
                       )
@@ -5436,6 +5480,42 @@
         const nextIndex = (currentIndex + direction + images.length) % images.length;
         carouselState.set(postKey, nextIndex);
         renderFeed();
+      }
+
+      function handleFeedTouchStart(event) {
+        const carousel = event.target.closest(".post-media-shell[data-post-key]");
+        if (!carousel) return;
+
+        const touch = event.touches?.[0];
+        if (!touch) return;
+
+        activeCarouselSwipe = {
+          postKey: carousel.dataset.postKey,
+          startX: touch.clientX,
+          startY: touch.clientY
+        };
+      }
+
+      function handleFeedTouchEnd(event) {
+        if (!activeCarouselSwipe) return;
+
+        const touch = event.changedTouches?.[0];
+        if (!touch) {
+          activeCarouselSwipe = null;
+          return;
+        }
+
+        const deltaX = touch.clientX - activeCarouselSwipe.startX;
+        const deltaY = touch.clientY - activeCarouselSwipe.startY;
+        const absX = Math.abs(deltaX);
+        const absY = Math.abs(deltaY);
+        const swipeThreshold = 36;
+
+        if (absX > swipeThreshold && absX > absY) {
+          moveCarousel(activeCarouselSwipe.postKey, deltaX < 0 ? 1 : -1);
+        }
+
+        activeCarouselSwipe = null;
       }
 
       function expandCaption(postKey) {
@@ -6305,6 +6385,12 @@
         input.addEventListener("input", () => {
           loginError.textContent = "";
         });
+      });
+
+      feedContainer.addEventListener("touchstart", handleFeedTouchStart, { passive: true });
+      feedContainer.addEventListener("touchend", handleFeedTouchEnd, { passive: true });
+      feedContainer.addEventListener("touchcancel", () => {
+        activeCarouselSwipe = null;
       });
 
       navButtons.forEach((button) => {

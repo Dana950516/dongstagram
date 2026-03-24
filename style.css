@@ -38,6 +38,10 @@
         padding: 0;
       }
 
+      body:has(#loginScreen:not(.hidden)) {
+        background: #ffffff;
+      }
+
       button,
       input,
       textarea {
@@ -60,6 +64,15 @@
         box-shadow: var(--shadow);
       }
 
+      .phone:has(.login-screen:not(.hidden)) {
+        width: 100%;
+        max-width: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        min-height: 100vh;
+      }
+
       .screen {
         min-height: 100vh;
       }
@@ -74,20 +87,17 @@
         align-items: center;
         justify-content: center;
         padding: 32px 24px 40px;
-        background:
-          radial-gradient(circle at 18% 18%, rgba(255, 220, 128, 0.48), transparent 24%),
-          radial-gradient(circle at 82% 14%, rgba(193, 53, 132, 0.2), transparent 26%),
-          radial-gradient(circle at 72% 82%, rgba(247, 119, 55, 0.18), transparent 24%),
-          linear-gradient(180deg, #ffffff 0%, #fff8fb 100%);
+        background: #ffffff;
       }
 
       .login-card {
         width: 100%;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.92);
-        padding: 40px 28px 28px;
-        border-radius: 24px;
-        box-shadow: 0 24px 60px rgba(193, 53, 132, 0.08);
+        max-width: 360px;
+        border: none;
+        background: #ffffff;
+        padding: 40px 0 28px;
+        border-radius: 0;
+        box-shadow: none;
       }
 
       .logo {
@@ -299,15 +309,6 @@
         padding: 0 5px;
       }
 
-      .story-ring {
-        width: 66px;
-        height: 66px;
-        border-radius: 50%;
-        padding: 2px;
-        margin: 0 auto;
-        background: linear-gradient(135deg, #feda75 8%, #fa7e1e 32%, #d62976 63%, #962fbf 88%, #4f5bd5 100%);
-      }
-
       .story-core {
         display: flex;
         align-items: center;
@@ -317,6 +318,12 @@
         border-radius: 50%;
         background: #ffffff;
         box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+      }
+
+      .story-core-plain {
+        width: 66px;
+        height: 66px;
+        margin: 0 auto;
       }
 
       .story-avatar {
@@ -425,6 +432,7 @@
         aspect-ratio: 4 / 5;
         overflow: hidden;
         background: #000000;
+        touch-action: pan-y;
       }
 
       .post-carousel-track,
@@ -779,10 +787,20 @@
           padding: 20px 0;
         }
 
+        body:has(#loginScreen:not(.hidden)) {
+          padding: 0;
+        }
+
         .phone {
           min-height: calc(100vh - 40px);
           border: 1px solid var(--border);
           border-radius: 28px;
+        }
+
+        .phone:has(.login-screen:not(.hidden)) {
+          min-height: 100vh;
+          border: none;
+          border-radius: 0;
         }
 
         .bottom-nav {
