@@ -6391,6 +6391,9 @@
         const enteredPassword = loginPassword.value;
 
         if (enteredId === VALID_ID && enteredPassword === VALID_PASSWORD) {
+          loginId.blur();
+          loginPassword.blur();
+          document.activeElement?.blur?.();
           loginError.textContent = "";
           guestQuizScreen.classList.add("hidden");
           loginScreen.classList.add("hidden");
